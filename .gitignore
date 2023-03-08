@@ -1,0 +1,7 @@
+# 去除node_modules文件
+/admin/node_modules
+/server/node_modules
+/web/node_modules
+
+# 去除IDE编辑器自带文件
+.vscode

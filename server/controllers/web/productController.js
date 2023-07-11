@@ -1,12 +1,12 @@
-const APP = require('../../global')
 const productService = require('../../services/web/productService')
+const config = require('../../env.config')
 
 const productController = {
   getList: async (req,res)=>{
     const result = await productService.getList()
 
     result.forEach(item=>{
-      item.cover = `${APP.base}:${APP.port}${item.cover}` 
+      item.cover = `${config.APP_BASE}:${config.APP_PORT}${item.cover}` 
     })
 
     res.send({

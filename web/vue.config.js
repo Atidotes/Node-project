@@ -9,7 +9,7 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       '/web': {
-        target: "http://127.0.0.1:3000",
+        target: `${process.env.VUE_APP_BASE}:${process.env.VUE_APP_PORT}`,
         changOrigin: true,
       }
     }

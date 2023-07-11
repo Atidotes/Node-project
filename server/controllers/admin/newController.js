@@ -1,5 +1,5 @@
-const APP = require('../../global')
 const newService = require('../../services/admin/newService')
+const config = require('../../env.config')
 
 const newController = {
 
@@ -47,7 +47,7 @@ const newController = {
   getNewInfo: async (req, res) => {
     const result = await newService.getNewInfo(req.params.id)
 
-    result.cover = `${APP.base}:${APP.port}${result.cover}`
+    result.cover = `${config.APP_BASE}:${config.APP_PORT}${result.cover}`
 
     res.send({
       code: 200,
@@ -92,7 +92,7 @@ const newController = {
     res.send({
       "errno": 0,
       "data": {
-        "url": `${APP.base}:${APP.port}${src}`,
+        "url": `${config.APP_BASE}:${config.APP_PORT}${src}`,
         "alt": "yyy",
       }
     })

@@ -1,10 +1,15 @@
 # 去除node_modules文件
 /admin/node_modules
+/admin/dist
 /server/node_modules
 /web/node_modules
+/web/dist
 
 # 去除IDE编辑器自带文件
 .vscode
 
 # 去除数据库数据
 /db
+
+Dockerfile
+.env.production

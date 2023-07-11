@@ -1,6 +1,6 @@
 const userService = require('../../services/admin/userService')
 const JWT = require('../../util/JWT')
-const APP = require('../../global')
+const config = require("../../env.config")
 
 const userController = {
   /** 登录 */
@@ -42,7 +42,7 @@ const userController = {
           accountNumber: result.accountNumber,
           gender: result.gender ?? 0,
           introduction: result.introduction,
-          avatar: result.avatar ? `${APP.base}:${APP.port}${result.avatar}` : null,
+          avatar: result.avatar ? `${config.APP_BASE}:${config.APP_PORT}${result.avatar}` : null,
           role: result.role,
         },
       })
@@ -78,7 +78,7 @@ const userController = {
           userName,
           gender: Number(gender),
           introduction,
-          avatar: `${APP.base}:${APP.port}${avatar}`,
+          avatar: `${config.APP_BASE}:${config.APP_PORT}${avatar}`,
         },
       })
     } else {
@@ -134,7 +134,7 @@ const userController = {
         if (!item.avatar || item.avatar.includes('undefined')) {
           item.avatar = null
         } else {
-          item.avatar = `${APP.base}:${APP.port}${item.avatar}`
+          item.avatar = `${config.APP_BASE}:${config.APP_PORT}${item.avatar}`
         }
       })
     }

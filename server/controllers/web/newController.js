@@ -1,5 +1,5 @@
-const APP = require('../../global')
 const newService = require('../../services/web/newService')
+const config = require('../../env.config')
 
 const newController = {
 
@@ -21,7 +21,7 @@ const newController = {
     let result = await newService.newList()
 
     result.forEach(item => {
-      item.cover = `${APP.base}:${APP.port}${item.cover}`
+      item.cover = `${config.APP_BASE}:${config.APP_PORT}${item.cover}`
     })
 
     res.send({
@@ -37,7 +37,7 @@ const newController = {
     let result = await newService.tabList()
 
     result.forEach(item=>{
-      item.cover = `${APP.base}:${APP.port}${item.cover}` 
+      item.cover = `${config.APP_BASE}:${config.APP_PORT}${item.cover}` 
     })
 
     res.send({

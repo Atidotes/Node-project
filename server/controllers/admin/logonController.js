@@ -1,5 +1,4 @@
 const logonService = require('../../services/admin/logonService')
-const APP = require('../../global')
 const svgCaptcha = require('svg-captcha');
 let text = 'a'
 

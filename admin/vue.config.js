@@ -5,11 +5,10 @@ const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 module.exports = defineConfig({
   transpileDependencies: true,
-
   devServer: {
     proxy: {
       '/admin': {
-        target: "http://127.0.0.1:3000",
+        target: `${process.env.VUE_APP_BASE}:${process.env.VUE_APP_PORT}`,
         changOrigin: true,
       }
     }

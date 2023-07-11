@@ -1,5 +1,5 @@
-const APP = require('../../global')
 const productService = require('../../services/admin/productServices')
+const config = require('../../env.config')
 
 const productController = {
 
@@ -37,10 +37,10 @@ const productController = {
     })
 
     if (!Array.isArray(result)) {
-      result.cover = `${APP.base}:${APP.port}${result.cover}`
+      result.cover = `${config.APP_BASE}:${config.APP_PORT}${result.cover}`
     } else {
       result.forEach((item) => {
-        item.cover = `${APP.base}:${APP.port}${item.cover}`
+        item.cover = `${config.APP_BASE}:${config.APP_PORT}${item.cover}`
       })
     }
 

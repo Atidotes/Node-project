@@ -7,7 +7,7 @@ NProgress.configure({ showSpinner: false })
 
 const requests = axios.create({
   baseURL: "/admin",
-  timeout: 500,
+  timeout: 3000,
 })
 
 // 添加请求拦截器
